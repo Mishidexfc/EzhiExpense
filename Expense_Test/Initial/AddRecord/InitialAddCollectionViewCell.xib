@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="payCollectionCell" id="gTV-IL-0wX" customClass="InitialAddCollectionViewCell" customModule="Expense_Test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alipay" translatesAutoresizingMaskIntoConstraints="NO" id="2oH-MQ-Qf9">
+                        <rect key="frame" x="10" y="5" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="55" id="m0C-d6-dIy"/>
+                            <constraint firstAttribute="width" constant="55" id="yHN-0u-IsD"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信支付宝" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nx-hj-ulO">
+                        <rect key="frame" x="7" y="64" width="56.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkSelect" translatesAutoresizingMaskIntoConstraints="NO" id="Vb7-rM-2Bf">
+                        <rect key="frame" x="50" y="0.0" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Uzn-US-r15"/>
+                            <constraint firstAttribute="width" constant="20" id="wz1-oI-19i"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="2oH-MQ-Qf9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="A2h-lS-qKd"/>
+                <constraint firstItem="9nx-hj-ulO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="BpJ-Kc-X8m"/>
+                <constraint firstItem="Vb7-rM-2Bf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KQf-Ca-KyV"/>
+                <constraint firstItem="9nx-hj-ulO" firstAttribute="top" secondItem="2oH-MQ-Qf9" secondAttribute="bottom" constant="4" id="Ojj-jh-98a"/>
+                <constraint firstAttribute="trailing" secondItem="Vb7-rM-2Bf" secondAttribute="trailing" id="WcJ-YV-MJI"/>
+                <constraint firstItem="2oH-MQ-Qf9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" constant="2.5" id="aA5-a3-NKr"/>
+                <constraint firstAttribute="bottom" secondItem="9nx-hj-ulO" secondAttribute="bottom" id="o4a-Va-H0X"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="50" height="76"/>
+            <connections>
+                <outlet property="checkImage" destination="Vb7-rM-2Bf" id="Rod-2f-BUa"/>
+                <outlet property="itemImage" destination="2oH-MQ-Qf9" id="cpW-th-Koh"/>
+                <outlet property="itemLabel" destination="9nx-hj-ulO" id="IkK-I0-NkQ"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="60"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Alipay" width="200" height="200"/>
+        <image name="checkSelect" width="200" height="200"/>
+    </resources>
+</document>

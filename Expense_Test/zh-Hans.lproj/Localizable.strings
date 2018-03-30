@@ -1,0 +1,54 @@
+/* 
+  InfoPlist.strings
+  Expense_Test
+
+  Created by Jue Wang on 2018/3/6.
+  Copyright © 2018年 Jue Wang. All rights reserved.
+*/
+
+"Cost" = "消费";
+"Earn" = "收入";
+"Me" = "我";
+"Default" = "默认";
+"Cash" = "现金";
+"Debit" = "银行卡";
+"Credit" = "信用卡";
+"Alipay" = "支付宝";
+"Wepay" = "微信支付";
+"Paypal" = "贝宝";
+"Online" = "网银";
+"Check" = "支票";
+"Food" = "吃饭";
+"Supermarket" = "超市";
+"Shop" = "购物";
+"Traffic" = "交通";
+"Transfer" = "转账";
+"Rent" = "房租";
+"Hospital" = "医院";
+"Finance" = "存钱";
+"Gift" = "礼物";
+"Movie" = "电影";
+"January" = "一月";
+"Febuary" = "二月";
+"March" = "三月";
+"April" = "四月";
+"May" = "五月";
+"June" = "六月";
+"July" = "七月";
+"August" = "八月";
+"September" = "九月";
+"October" = "十月";
+"November" = "十一月";
+"December" = "十二月";
+"Remark" = "备注";
+"Today" = "今天";
+"Date" = "日期";
+"InputOptional" = "输入您的备注（可选）";
+"InputSum" = "在此输入金额";
+"Choose payer" = "选择当事人";
+"Choose payment" = "选择支付方式";
+"Choose payee" = "选择用途";
+"Cancel" = "取消";
+"Save" = "保存";
+"Add your transaction" = "添加您的交易记录";
+"Delete" = "删除";

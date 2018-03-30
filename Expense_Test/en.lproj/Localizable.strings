@@ -1,0 +1,53 @@
+/* 
+  InfoPlist.strings
+  Expense_Test
+
+  Created by Jue Wang on 2018/3/6.
+  Copyright © 2018年 Jue Wang. All rights reserved.
+*/
+"Cost" = "Cost";
+"Earn" = "Earn";
+"Me" = "Me";
+"Default" = "Default";
+"Cash" = "Cash";
+"Debit" = "Debit";
+"Credit" = "Credit";
+"Alipay" = "Alipay";
+"Wepay" = "Wepay";
+"Paypal" = "Paypal";
+"Online" = "Online";
+"Check" = "Check";
+"Food" = "Food";
+"Supermarket" = "Supermarket";
+"Shop" = "Shop";
+"Traffic" = "Traffic";
+"Transfer" = "Transfer";
+"Rent" = "Rent";
+"Hospital" = "Hospital";
+"Finance" = "Finance";
+"Gift" = "Gift";
+"Movie" = "Movie";
+"January" = "January";
+"Febuary" = "Febuary";
+"March" = "March";
+"April" = "April";
+"May" = "May";
+"June" = "June";
+"July" = "July";
+"August" = "August";
+"September" = "September";
+"October" = "October";
+"November" = "November";
+"December" = "December";
+"Remark" = "Remark";
+"Today" = "Today";
+"Date" = "Date";
+"InputOptional" = "Input your remark (Optional)";
+"InputSum" = "Input your sum here";
+"Choose payer" = "Choose role";
+"Choose payment" = "Choose payment";
+"Choose payee" = "Choose purpose";
+"Cancel" = "Cancel";
+"Save" = "Save";
+"Add your transaction" = "Add your transaction";
+"Delete" = "Delete";
