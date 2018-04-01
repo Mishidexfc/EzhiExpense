@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////
 //  Description: The view controller for adding new transaction
 //  Updates:
-//  20180307    first version
+//  20180307    First version
+//  20180331    Fix the bug that the keyboard covers the remark textfield
 ////////////////////////////////////////////////////////////////////
 
 import UIKit
