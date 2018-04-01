@@ -26,7 +26,7 @@ class UserSettings:Codable{
         for temp in currentRoles {
             for tempA in temp.value {
                 guard mediator.registerNewRole(name: tempA, role: temp.key) else {
-                    print("false to create new payer.")
+                    // print("false to create new payer.")
                     return
                 }
             }

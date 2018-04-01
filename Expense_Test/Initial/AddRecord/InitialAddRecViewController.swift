@@ -30,13 +30,32 @@ class InitialAddRecViewController: UIViewController, UITableViewDataSource, UITa
     var money: Double? = 0.00
     var transDate = Date()
     var remark:String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.drawContent()
+        self.customTableView.keyboardDismissMode = .onDrag
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(note:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(note:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
+    @objc func keyboardWillShow(note: NSNotification) {
+        if let keyboardSize = (note.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
+            self.customTableView.snp.updateConstraints { (make) -> Void in
+                make.bottom.equalTo(0).offset(-keyboardSize.height)
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(note: NSNotification) {
+        self.customTableView.snp.updateConstraints{ (make) -> Void in
+            make.bottom.equalTo(0)
+        }
+    }
     /// Cancel
     @IBAction func cancelAddition(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -157,10 +176,20 @@ class InitialAddRecViewController: UIViewController, UITableViewDataSource, UITa
             return cell
         }
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = self.customTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? InitialAddSumCell {
+            cell.decimalTF.resignFirstResponder()
+        }
+        if let cell = self.customTableView.cellForRow(at: IndexPath(row: 0, section: 4)) as? InitialAddRemarkCell {
+            cell.remarkTF.resignFirstResponder()
+        }
+    }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if let cell = self.customTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? InitialAddSumCell {
                 cell.decimalTF.resignFirstResponder()
+        }
+        if let cell = self.customTableView.cellForRow(at: IndexPath(row: 0, section: 4)) as? InitialAddRemarkCell {
+            cell.remarkTF.resignFirstResponder()
         }
     }
 }

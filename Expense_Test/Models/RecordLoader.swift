@@ -29,7 +29,7 @@ class RecordLoader{
         for temp in newUser.currentRoles {
             for tempA in temp.value {
                 guard (newUser.mediator?.registerNewRole(name: tempA, role: temp.key))! else {
-                    print("false to create new payer.")
+                    // print("false to create new payer.")
                     continue
                 }
             }

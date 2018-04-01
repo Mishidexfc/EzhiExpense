@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yB2-0t-DIH" customClass="LineChartView" customModule="Charts">
-                    <rect key="frame" x="0.0" y="70" width="375" height="161"/>
+                    <rect key="frame" x="0.0" y="75" width="375" height="156"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wj4-oD-MyP">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2999December" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSI-th-pBT">
-                            <rect key="frame" x="117" y="39" width="140" height="21"/>
+                            <rect key="frame" x="117" y="49" width="140" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="140" id="LB6-pT-gf3"/>
                             </constraints>
@@ -32,7 +32,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ye-FU-M2m">
-                            <rect key="frame" x="77" y="35" width="30" height="30"/>
+                            <rect key="frame" x="77" y="45" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="0AE-Ta-7jI"/>
                                 <constraint firstAttribute="width" constant="30" id="gVf-6i-SFR"/>
@@ -45,7 +45,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uR-ip-fbS">
-                            <rect key="frame" x="267" y="35" width="30" height="30"/>
+                            <rect key="frame" x="267" y="45" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="cQt-PG-ouy"/>
                                 <constraint firstAttribute="height" constant="30" id="hXP-ne-gsA"/>
@@ -60,11 +60,13 @@
                     </subviews>
                     <color key="backgroundColor" red="0.54456228017807007" green="0.91503804922103882" blue="0.78076416254043579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="0uR-ip-fbS" secondAttribute="bottom" id="3In-7N-Jpu"/>
                         <constraint firstItem="0uR-ip-fbS" firstAttribute="centerY" secondItem="iSI-th-pBT" secondAttribute="centerY" id="7RT-hz-mHp"/>
-                        <constraint firstAttribute="height" constant="70" id="Y7Z-cu-WfR"/>
+                        <constraint firstAttribute="height" constant="75" id="Y7Z-cu-WfR"/>
                         <constraint firstItem="iSI-th-pBT" firstAttribute="centerX" secondItem="wj4-oD-MyP" secondAttribute="centerX" id="fCx-Uk-qoN"/>
+                        <constraint firstAttribute="bottom" secondItem="6ye-FU-M2m" secondAttribute="bottom" id="jZs-Po-mv2"/>
                         <constraint firstItem="iSI-th-pBT" firstAttribute="centerY" secondItem="6ye-FU-M2m" secondAttribute="centerY" id="lsK-0M-0Fo"/>
-                        <constraint firstAttribute="bottom" secondItem="iSI-th-pBT" secondAttribute="bottom" constant="10" id="nZJ-xM-JH5"/>
+                        <constraint firstAttribute="bottom" secondItem="iSI-th-pBT" secondAttribute="bottom" constant="5" id="nZJ-xM-JH5"/>
                         <constraint firstItem="iSI-th-pBT" firstAttribute="leading" secondItem="6ye-FU-M2m" secondAttribute="trailing" constant="10" id="oUd-VF-aCs"/>
                         <constraint firstItem="0uR-ip-fbS" firstAttribute="leading" secondItem="iSI-th-pBT" secondAttribute="trailing" constant="10" id="zG3-iR-I13"/>
                     </constraints>

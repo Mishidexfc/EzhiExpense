@@ -54,6 +54,7 @@ class InitialAddRemarkCell: UITableViewCell,UITextFieldDelegate{
     @objc private func retreatPicker() {
         self.dateTF.resignFirstResponder()
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if (textField == self.remarkTF) {
             self.parent?.remark = textField.text

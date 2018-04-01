@@ -69,6 +69,7 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
             }
             break
         case "01","03","05","07","08","10","12":
+            endDate = 31
             break
         default:
             endDate = 30
@@ -86,7 +87,7 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
             if let source = self.userSetting?.transactionRecord[fullDate] {
                 for temp in source {
                     self.displaySet.append(temp)
-                    if (temp.money >= 0) {
+                    if (temp.money >= 0.00) {
                         // For earning
                         sum2 += temp.money
                     }
@@ -108,15 +109,24 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
         self.initialPanel?.costLabel.text = String(format:"%.2f", costSum)
         self.initialPanel?.earnLabel.text = String(format:"%.2f", earnSum)
         let line = LineChartDataSet(values: dataEntrySet, label: NSLocalizedString("Cost", comment: "Cost"))
-        line.colors = [NSUIColor.white]
+        line.colors = [NSUIColor.cyan]
+        line.circleColors = [NSUIColor.cyan]
         let line2 = LineChartDataSet(values: dataEntrySet2, label: NSLocalizedString("Earn", comment: "Earn"))
-        line2.colors = [NSUIColor.blue]
+        line2.colors = [NSUIColor.orange]
+        line2.circleColors = [NSUIColor.orange]
         lineSet = [line,line2]
+        for singleLine in lineSet {
+            singleLine.circleRadius = 5
+            singleLine.circleHoleRadius = 3
+        }
         // If earning does not exist, just rendering the cost line.
         if (earnSum == 0) {
             lineSet = [line]
         }
         self.initialPanel?.chartView.data = LineChartData(dataSets: lineSet)
+        let format = NumberFormatter()
+        format.numberStyle = .decimal
+        self.initialPanel?.chartView.data?.setValueFormatter(DefaultValueFormatter(formatter:format))
         
         self.initialPanel?.chartView.scaleYEnabled = false
         self.initialPanel?.chartView.scaleXEnabled = false
@@ -125,10 +135,12 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
         //self.initialPanel?.chartView.xAxis.enabled = false
         self.initialPanel?.chartView.leftAxis.enabled = false
         self.initialPanel?.chartView.rightAxis.enabled = false
+        self.initialPanel?.chartView.leftAxis.axisMinimum = 0
         self.initialPanel?.chartView.rightAxis.axisMinimum = 0
+        //self.initialPanel?.chartView.leftAxis.spaceBottom = CGFloat(0.15)
         self.initialPanel?.chartView.chartDescription?.enabled = false
         self.initialPanel?.chartView.setVisibleXRangeMaximum(7)
-        self.initialPanel?.chartView.animate(xAxisDuration: 2)
+        self.initialPanel?.chartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
     }
     
     /// init the tableview
@@ -153,8 +165,8 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
         addButton?.setImage(UIImage(named:"addIcon"), for: .highlighted)
         self.view.addSubview(addButton!)
         addButton?.snp.makeConstraints { (make) -> Void in
-            make.width.equalTo(40)
-            make.height.equalTo(40)
+            make.width.equalTo(45)
+            make.height.equalTo(45)
             make.bottom.equalTo(-20)
             make.right.equalTo(-20)
         }
@@ -211,8 +223,5 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
         return [deleteAction]
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 }
 

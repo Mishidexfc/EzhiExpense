@@ -27,9 +27,9 @@ class InitialStatisticPanelView: UIView {
     @IBOutlet weak var rightArrow: UIButton!
     
     func drawContent() {
-        self.backgroundColor = UIColor(rgb: 0x69EFC7)
-        self.TopBarView.backgroundColor = UIColor(rgb: 0x69EFC7)
-        self.SummaryPanel.backgroundColor = UIColor(rgb: 0x69EFC7)
+        self.backgroundColor = UIColor(rgb: 0x8BE6C7)
+        self.TopBarView.backgroundColor = UIColor(rgb: 0x8BE6C7)
+        self.SummaryPanel.backgroundColor = UIColor(rgb: 0x8BE6C7)
         self.costTitleLabel.text = NSLocalizedString("Cost", comment: "Cost Title")
         self.earnTitleLabel.text = NSLocalizedString("Earn", comment: "Earn Title")
     }

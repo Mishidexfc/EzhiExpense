@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alipay" translatesAutoresizingMaskIntoConstraints="NO" id="2oH-MQ-Qf9">
-                        <rect key="frame" x="10" y="5" width="55" height="55"/>
+                        <rect key="frame" x="7.5" y="5" width="55" height="55"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="55" id="m0C-d6-dIy"/>
                             <constraint firstAttribute="width" constant="55" id="yHN-0u-IsD"/>
@@ -47,7 +46,7 @@
                 <constraint firstItem="Vb7-rM-2Bf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KQf-Ca-KyV"/>
                 <constraint firstItem="9nx-hj-ulO" firstAttribute="top" secondItem="2oH-MQ-Qf9" secondAttribute="bottom" constant="4" id="Ojj-jh-98a"/>
                 <constraint firstAttribute="trailing" secondItem="Vb7-rM-2Bf" secondAttribute="trailing" id="WcJ-YV-MJI"/>
-                <constraint firstItem="2oH-MQ-Qf9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" constant="2.5" id="aA5-a3-NKr"/>
+                <constraint firstItem="2oH-MQ-Qf9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="aA5-a3-NKr"/>
                 <constraint firstAttribute="bottom" secondItem="9nx-hj-ulO" secondAttribute="bottom" id="o4a-Va-H0X"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
