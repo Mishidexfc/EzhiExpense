@@ -26,7 +26,7 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hph-Vi-CJ5">
-                        <rect key="frame" x="10" y="8" width="90" height="29"/>
+                        <rect key="frame" x="15" y="8" width="90" height="29"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="HyR-dr-q9y"/>
                         </constraints>
@@ -43,9 +43,9 @@
                 <constraints>
                     <constraint firstItem="GEY-6z-iGP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4LU-fT-y5O"/>
                     <constraint firstItem="hph-Vi-CJ5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Crq-DG-EBa"/>
-                    <constraint firstItem="GEY-6z-iGP" firstAttribute="leading" secondItem="hph-Vi-CJ5" secondAttribute="trailing" constant="10" id="Dg3-fd-C6o"/>
-                    <constraint firstAttribute="trailing" secondItem="GEY-6z-iGP" secondAttribute="trailing" constant="10" id="ZIk-0y-3vT"/>
-                    <constraint firstItem="hph-Vi-CJ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lVC-2G-iI6"/>
+                    <constraint firstItem="hph-Vi-CJ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="lVC-2G-iI6"/>
+                    <constraint firstAttribute="trailing" secondItem="GEY-6z-iGP" secondAttribute="trailing" constant="10" id="uX2-sD-jiI"/>
+                    <constraint firstItem="GEY-6z-iGP" firstAttribute="leading" secondItem="hph-Vi-CJ5" secondAttribute="trailing" constant="5" id="zvK-ft-osl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

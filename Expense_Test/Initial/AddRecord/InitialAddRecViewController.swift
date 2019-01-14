@@ -70,8 +70,6 @@ class InitialAddRecViewController: UIViewController, UITableViewDataSource, UITa
         self.money = self.costOrEarn ? -self.money! : self.money
         if mediator.transfer(from: self.fromName!, to: self.toName!, by: self.by!, money: self.money!, date: transDate,remark: self.remark) {
             self.parentRef?.displayDate = transDate
-            self.parentRef?.drawPlot()
-            self.parentRef?.initialtable?.reloadData()
             // Save record
             let rc = RecordLoader()
             let newTrans = EncodableTrans()
@@ -84,7 +82,7 @@ class InitialAddRecViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    private func drawContent() {
+    func drawContent() {
         self.titleLabel.text = NSLocalizedString("Add your transaction", comment: "Add your transaction")
         self.cancelButton.setTitle(NSLocalizedString("Cancel", comment: "Cancel"), for: .normal)
         self.saveButton.setTitle(NSLocalizedString("Save", comment: "Save"), for: .normal) 

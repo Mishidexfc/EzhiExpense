@@ -33,6 +33,9 @@ class InitialStatisticPanelView: UIView {
         self.costTitleLabel.text = NSLocalizedString("Cost", comment: "Cost Title")
         self.earnTitleLabel.text = NSLocalizedString("Earn", comment: "Earn Title")
     }
+    
+    
+    
     /// Tap the left arrow
     @IBAction func goPrevMonth(_ sender: UIButton) {
         var dateSet = self.parent?.displayDate.getYearMonthDay()

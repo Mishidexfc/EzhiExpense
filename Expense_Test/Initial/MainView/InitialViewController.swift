@@ -17,15 +17,23 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
     private var initialPanel: InitialStatisticPanelView?
     var initialtable : UITableView?
     private var addButton: UIButton?
+    private var detailButton: UIButton?
+    private var popView: InitialCellDetailView?
+    private var buttonPos : [CGFloat] = [0,0,0,0]
     var userSetting: UserSettings?
-    var displayDate = Date()
+    var displayDate = Date() {
+        didSet{
+            self.drawPlot()
+            self.initialtable?.reloadData()
+        }
+    }
     private var displaySet :[Transaction] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadUserSettings()
         self.initForStatisticPanel()
         self.initForTableView()
-        self.initForAddButton()
+        self.initForButtons()
         self.drawPlot()
     }
     
@@ -159,7 +167,7 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
     }
     
     /// init the bottom-right button
-    private func initForAddButton() {
+    private func initForButtons() {
         addButton = UIButton()
         addButton?.setImage(UIImage(named: "addIconNormal"), for: .normal)
         addButton?.setImage(UIImage(named:"addIcon"), for: .highlighted)
@@ -171,8 +179,42 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
             make.right.equalTo(-20)
         }
         addButton?.addTarget(self, action: #selector(self.addTrans), for: .touchUpInside)
+        let panGes = UIPanGestureRecognizer(target: self, action: #selector(self.dragButton(_:)))
+        addButton?.addGestureRecognizer(panGes)
+        let screenFrame = UIScreen.main.bounds
+        self.buttonPos[0] = screenFrame.width * 0.8 + 22.5
+        self.buttonPos[1] = screenFrame.height - 22.5
+        self.buttonPos[2] = 22.5
+        self.buttonPos[3] = screenFrame.width - 22.5
     }
-    
+    @objc private func dragButton(_ sender: UIPanGestureRecognizer) {
+        if (sender.state == .changed || sender.state == .began) {
+            let pos = sender.location(in: self.view)
+            if (pos.x >= buttonPos[2] && pos.x <= buttonPos[3] && pos.y >= buttonPos[0] && pos.y <= buttonPos[1]) {
+                addButton?.center = pos
+            }
+        }
+//        else if (sender.state == .ended) {
+//            let screenFrame = UIScreen.main.bounds
+//            
+//        }
+    }
+    @objc private func loadPopView(_ index : Int){
+        popView = InitialCellDetailView.loadFromNib()
+        let progfileView = InitialTransProfileView.loadFromNib()
+        popView?.contentView.addSubview(progfileView)
+        progfileView.frame = (popView?.contentView.bounds)!
+        progfileView.drawContent(self.displaySet[index])
+        popView?.alpha = 0.1
+        self.view.addSubview(popView!)
+        UIView.animate(withDuration: 0.2){
+            self.popView?.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+            self.popView?.alpha = 1
+        }
+        popView!.snp.makeConstraints{ (make) -> Void in
+            make.edges.equalTo(UIEdgeInsetsMake(0, 0, 0, 0))
+        }
+    }
     /// present the addRec ViewController
     @objc private func addTrans(){
         let newVc = InitialAddRecViewController(nibName: "InitialAddRecViewController", bundle: nil)
@@ -199,6 +241,7 @@ class InitialViewController: UIViewController,UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.initialtable?.deselectRow(at: indexPath, animated: true)
+        self.loadPopView(indexPath.item)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

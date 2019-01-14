@@ -21,6 +21,7 @@ class InitialAddSumCell: UITableViewCell,UITextFieldDelegate {
         self.decimalTF.delegate = self
     }
     
+    
     // Delegate for auto record the value
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
